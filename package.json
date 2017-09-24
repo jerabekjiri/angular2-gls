@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/animations": "^4.4.1",
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
     "@angular/core": "^4.0.0",
@@ -20,7 +21,11 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
+    "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.3",
+    "angular2-promise-buttons": "^1.0.13",
     "core-js": "^2.4.1",
+    "font-awesome": "^4.7.0",
+    "ng2-button-loader": "0.0.6",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
   },

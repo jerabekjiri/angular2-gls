@@ -1,0 +1,15 @@
+<!--<header>
+
+
+    <button class="btn btn-primary" (click)="open(addGearContent)">Add gear</button>
+</header>
+-->
+
+<div *ngFor="let gearbox of gearboxes">
+
+  <app-gearbox *ngIf="gearbox" [gearbox]="gearbox.gearbox" [parts]='gearbox.parts' [ordered]="gearbox.ordered" (partsUpdated)="handlePartsUpdated($event)"></app-gearbox>
+
+</div>
+
+<!--<app-gearbox *ngIf="gearbox" [gearbox]="gearbox.gearbox" [parts]='gearbox.parts' [ordered]="gearbox.ordered"></app-gearbox>
+-->

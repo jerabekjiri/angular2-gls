@@ -1,0 +1,42 @@
+<h1>{{gearbox}} - {{module}}</h1>
+<table class="table">
+   <thead>
+     <tr>
+       <th *ngFor="let column of tableHeader">{{column}}</th>
+     </tr>
+   </thead>
+   <tbody>
+<tr *ngFor="let part of filteredParts">
+  <ng-container *ngIf="specPart != part; else editableContainer">
+ <td>{{ part.pos }}</td>
+ <td>{{ part.note }}</td>
+ <td>{{ part.id_number }}</td>
+ <td>{{ part.q_gbx }}</td>
+ <td >{{ part.q }}</td>
+ <td>{{ part.q_q_gbx }}</td>
+ </ng-container>
+ <td><button *ngIf="!editable" class="btn btn-primary" (click)="edit(part)"><i class="fa fa-pencil" aria-hidden="true"></i></button></td>
+ <ng-container *ngIf="specPart == part">
+   <td><button class="btn btn-success" (click)="updatePart(part)"><i class="fa fa-check" aria-hidden="true"></i></button></td>
+   <td><button  class="btn btn-danger" (click)="cancel()"><i class="fa fa-ban" aria-hidden="true"></i></button></td>
+
+ </ng-container>
+
+
+ <ng-template #editableContainer >
+
+   <td><input type="text" class="form-control" placeholder="{{ part.pos }}"  [(ngModel)]="part.pos"   (change)="evokeChange()"></td>
+   <td><input type="text" class="form-control" placeholder="{{ part.note }}"  [(ngModel)]="part.note" (change)="evokeChange()"></td>
+   <td><input type="text" class="form-control" placeholder="{{ part.id_number }}"  [(ngModel)]="part.id_number" (change)="evokeChange()"></td>
+   <td><input type="text" class="form-control" placeholder="{{ part.q_gbx }}"  [(ngModel)]="part.q_gbx" (change)="evokeChange()" ></td>
+   <td><input type="text" class="form-control" placeholder="{{ part.q }}"  [(ngModel)]="part.q" (change)="evokeChange()"></td>
+   <td><input type="text" class="form-control" placeholder="{{ part.q_q_gbx }}"  [(ngModel)]="part.q_q_gbx" (change)="evokeChange(true)"></td>
+
+ </ng-template>
+
+
+
+
+</tr>
+   </tbody>
+ </table>

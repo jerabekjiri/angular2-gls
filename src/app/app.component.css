@@ -1,0 +1,11 @@
+header{
+  width: 100%;
+  height: 70px;
+  box-shadow: 1px 0.5px 0.5px #d5d5d5;
+}
+
+header button{
+  margin-left: 15px;
+  margin-top: 17px;
+  text-transform: uppercase;
+}
